@@ -1,25 +1,22 @@
 BrainCancer_ML_Classification/
 │
-├── notebooks/
-│   ├── step1_feature_extraction_rembrandt.ipynb     # Feature extraction from MRI
-│   ├── step2_model_training_tcga.ipynb              # ML on TCGA data
-│   ├── step3_prediction_rembrandt.ipynb             # Apply model to REMBRANDT
-│   ├── step4_evaluation_metrics.ipynb               # Confusion matrix, report
+├── notebooks/                          # All analysis steps in Jupyter
+│   ├── feature_extraction_rembrandt.ipynb          # Extract radiomics features from REMBRANDT (T1 modality)
+│   ├── model_training_tcga.ipynb                   # Train ML models on TCGA radiomic + clinical data
+│   ├── rembrandt_prediction.ipynb                  # Predict REMBRANDT cancer types using trained models
+│   ├── prediction_evaluation.ipynb                 # Evaluate predictions (confusion matrix, metrics)
+│   └── merged_tcga_rembrandt_analysis.ipynb        # Optional: combined workflow for training + evaluation
 │
-├── data_links/
-│   └── README_data.txt                              # GDrive links to data
+├── results/                           # Outputs used in training and testing
+│   ├── rembrandt_radiomic_features.csv             # Radiomics matrix for 64 REMBRANDT patients
+│   ├── extracted_features.csv                      # Alternate version (can keep or remove)
+│   ├── tcga_radiomics_features.csv                 # TCGA T1 modality radiomic features
+│   ├── tcga_clinical_labels.xlsx                   # Cancer type / gender labels for TCGA patients
+│   └── rembrandt_ground_truth_labels.txt           # Known cancer types for REMBRANDT patients
 │
-├── results/
-│   ├── extracted_features.csv
-│   ├── final_project_step1_radiomic_features.csv
-│   ├── TCGA_pyradiomics_t1.csv
-│   ├── TCGA_GBM_LGG_clinical_data_for_task2.csv
-│   └── Rembrandt_Clinical_ground_truth_64set.txt
+├── data_links/                      # Links to raw input MRI/segmentation files
+│   └── README_data.txt                           # Google Drive links to T1 images and segmentation masks
 │
-├── report/
-│   ├── HIDS509_Final_Report.pdf                     # if allowed
-│   └── HIDS509_Presentation.pptx                    # optional
-│
-├── README.md
-├── requirements.txt
-└── .gitignore
+├── README.md                       # Project overview, methods, instructions, links 
+├── requirements.txt                # All required libraries
+└── .gitignore                      # Ignore outputs, checkpoints, large files

@@ -1,15 +1,24 @@
 BrainCancer_ML_Classification/
-├── data/                        # drive
 │
 ├── notebooks/
-│   ├── feature_extraction.ipynb      # Pyradiomics for REMBRANDT
-│   ├── model_training_tcga.ipynb     # ML training on TCGA features
-│   ├── prediction_rembrandt.ipynb    # Apply model to REMBRANDT test set
-│   └── analysis_confusion_matrix.ipynb  # Evaluation, metrics
+│   ├── step1_feature_extraction_rembrandt.ipynb     # Feature extraction from MRI
+│   ├── step2_model_training_tcga.ipynb              # ML on TCGA data
+│   ├── step3_prediction_rembrandt.ipynb             # Apply model to REMBRANDT
+│   ├── step4_evaluation_metrics.ipynb               # Confusion matrix, report
+│
+├── data_links/
+│   └── README_data.txt                              # GDrive links to data
+│
+├── results/
+│   ├── extracted_features.csv
+│   ├── final_project_step1_radiomic_features.csv
+│   ├── TCGA_pyradiomics_t1.csv
+│   ├── TCGA_GBM_LGG_clinical_data_for_task2.csv
+│   └── Rembrandt_Clinical_ground_truth_64set.txt
 │
 ├── report/
-│   ├── HIDS509_Final_Report.pdf
-│   └── HIDS509_Presentation.pptx
+│   ├── HIDS509_Final_Report.pdf                     # if allowed
+│   └── HIDS509_Presentation.pptx                    # optional
 │
 ├── README.md
 ├── requirements.txt
